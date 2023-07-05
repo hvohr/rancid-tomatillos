@@ -2,7 +2,9 @@ import React from 'react'
 import './MovieCard.css'
 
 function MovieCard(props) {
-  <img src={props.poster}></img>
+  return (
+  <img className='movie-card' src={props.poster}></img>
+  )
 }
 
-export default movieCard
+export default MovieCard

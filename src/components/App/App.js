@@ -1,15 +1,17 @@
 import React from 'react'
 import Header from '../Header/Header'
-import Movies from '../Movies/Movies'
+import MovieCard from '../MovieCard/MovieCard'
 import movieData from '../movieData/movieData'
 import './App.css';
 
 function App() {
-let filtered = movieData.movies.map(movie => )
+let filtered = movieData.movies.map(movie => <MovieCard poster={movie.poster_path} />)
   return (
     <div className="App">
-      <Header />
-      <Movies />
+      <h1>Rancid tomatillos</h1>
+      <main className='movie-list'>
+        {filtered}
+      </main>
     </div>
   );
 }
