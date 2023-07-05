@@ -3,7 +3,7 @@ import './MovieCard.css'
 
 function MovieCard(props) {
   return (
-  <img className='movie-card' src={props.poster}></img>
+    <img className='movie-card' src={props.poster}></img>
   )
 }
 

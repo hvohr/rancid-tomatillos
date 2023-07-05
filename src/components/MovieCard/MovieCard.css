@@ -2,4 +2,10 @@
   height: 300px;
   width: 200px;
   margin: 15px;
+  cursor: pointer;
+  transition: all .2s ease-in-out; 
 }
+
+.movie-card:hover { 
+  transform: scale(1.1); 
+  }

@@ -8,7 +8,7 @@ function App() {
 let filtered = movieData.movies.map(movie => <MovieCard poster={movie.poster_path} />)
   return (
     <div className="App">
-      <h1>Rancid tomatillos</h1>
+      <Header />
       <main className='movie-list'>
         {filtered}
       </main>
