@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React from 'react'
+import Header from '../Header/Header'
+import Movies from '../Movies/Movies'
+import movieData from '../movieData/movieData'
 import './App.css';
 
 function App() {
+let filtered = movieData.movies.map(movie => )
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Movies />
     </div>
   );
 }
