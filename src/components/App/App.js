@@ -4,21 +4,41 @@ import MovieCard from '../MovieCard/MovieCard'
 import movieData from '../movieData/movieData'
 import InduvidualMovie from '../InduvidualMovie/InduvidualMovie'
 import './App.css';
+import { useState } from 'react';
+
+
 
 function App() {
-let filtered = movieData.movies.map(movie => <MovieCard poster={movie.poster_path} id={movie.id} key={movie.id} findMovie={findMovie}/>)
+const [movies, setMovies] = useState(movieData.movies);
+const [movieView, setMovieView] = useState(false);
+const [moviesView, setMoviesView] = useState(true);
+const [picked, setPicked] = useState();
+
+let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie}/>)
+
+
 
 function findMovie(anID) {
     console.log(anID)
     console.log('yayayaya')
-    let singular = filtered.find(x => Number(x.key) === anID)
-    console.log(singular)
+    let singular = movies.find(x => Number(x.id) === anID)
+    console.log(singular)   
+    setMoviesView(false)
+    setMovieView(true)
+    setPicked(singular)
   }
+
+
+  
+
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <main className='movie-list'>
-        {filtered}
+      {movieView && <InduvidualMovie picked={picked}/>}
+      {moviesView && filtered}
+      
+      
       </main>
     </div>
   );
