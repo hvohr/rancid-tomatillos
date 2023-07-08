@@ -7,7 +7,7 @@ function InduvidualMovie(props) {
 
   return (
     <div>
-    <button> X </button>
+    
     <img className='movie-card' src={props.picked.poster_path
 } alt='A poster of a movie'></img>
     <h2> {props.picked.id} </h2>

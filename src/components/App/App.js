@@ -22,12 +22,17 @@ function findMovie(anID) {
     console.log(anID)
     console.log('yayayaya')
     let singular = movies.find(x => Number(x.id) === anID)
+    
     console.log(singular)   
     setMoviesView(false)
     setMovieView(true)
     setPicked(singular)
   }
-
+  function flippity() {
+    console.log('hey')
+    setMoviesView(true)
+    setMovieView(false)
+  }
 
   
 
@@ -35,6 +40,7 @@ function findMovie(anID) {
     <div className="App">
       <Header/>
       <main className='movie-list'>
+      {movieView && <button onClick={() => flippity()}> Be gone movie! </button>}  
       {movieView && <InduvidualMovie picked={picked}/>}
       {moviesView && filtered}
       
