@@ -5,19 +5,35 @@ import InduvidualMovie from '../InduvidualMovie/InduvidualMovie'
 import './App.css';
 import { useState, useEffect } from 'react';
 
-
 function App() {
 
+  async function fetchData() {
+    try {
+      let response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies?sort_by=asc(title)')
+      setError(response.status)
+      let responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      handleError()
+    }
+  }
   useEffect(() => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies?sort=title&order=desc')
-      .then(response => response.json())
-      .then(data => setMovies(data.movies))
-      .catch(error => console.log(error))
+    fetchData().then(
+      data => setMovies(data.movies)
+    )
   })
+
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState('')
   const [movieView, setMovieView] = useState(false);
   const [moviesView, setMoviesView] = useState(true);
   const [picked, setPicked] = useState();
+
+  function handleError() {
+    if (error !== '') {
+      throw new Error(`HTTP Error: ${error} -- Please try again`)
+    }
+  }
 
   let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
 
