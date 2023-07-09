@@ -14,7 +14,7 @@ const [movieView, setMovieView] = useState(false);
 const [moviesView, setMoviesView] = useState(true);
 const [picked, setPicked] = useState();
 
-let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie}/>)
+let filtered = movies.sort((a,b)=> a.title.localeCompare(b.title)).map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie}/>)
 
 
 
@@ -28,20 +28,17 @@ function findMovie(anID) {
     setMovieView(true)
     setPicked(singular)
   }
-  function flippity() {
-    console.log('hey')
-    setMoviesView(true)
+  function floppity() {
     setMovieView(false)
+    setMoviesView(true)  
   }
-
   
 
   return (
     <div className="App">
       <Header/>
       <main className='movie-list'>
-      {movieView && <button onClick={() => flippity()}> Be gone movie! </button>}  
-      {movieView && <InduvidualMovie picked={picked}/>}
+      {movieView && <InduvidualMovie floppity={floppity} picked={picked}/>}
       {moviesView && filtered}
       
       
