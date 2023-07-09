@@ -9,7 +9,7 @@ function App() {
 
   async function fetchData() {
     try {
-      let response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies?sort_by=asc(title)')
+      let response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       setError(response.status)
       let responseJson = await response.json();
       return responseJson;
@@ -22,6 +22,11 @@ function App() {
       data => setMovies(data.movies)
     )
   })
+  function handleError() {
+    if (error !== '') {
+      throw new Error(`HTTP Error: ${error} -- Please try again`)
+    }
+  }
 
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('')
@@ -29,13 +34,7 @@ function App() {
   const [moviesView, setMoviesView] = useState(true);
   const [picked, setPicked] = useState();
 
-  function handleError() {
-    if (error !== '') {
-      throw new Error(`HTTP Error: ${error} -- Please try again`)
-    }
-  }
-
-  let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
+  let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie}/>)
 
   function findMovie(anID) {
     let singular = movies.find(x => Number(x.id) === anID)
@@ -57,19 +56,4 @@ function App() {
     </div>
   );
 }
-
-
-// function App() {
-//   let filtered = movieData.movies.map(movie => <MovieCard poster={movie.poster_path} id={movie.id} key={movie.id}/>)
-
-//     return (
-//       <div className="App">
-//         <Header />
-//         <main className='movie-list'>
-//           {filtered}
-//         </main>
-//       </div>
-//     );
-//   }
-
 export default App;
