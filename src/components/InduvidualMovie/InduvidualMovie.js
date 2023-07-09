@@ -3,8 +3,8 @@ import './InduvidualMovie.css'
 
 function InduvidualMovie(props) {
   return (
-    <div>
-      <button onClick={props.floppity}> Go back home! </button>
+    <div className='induvidual-container'>
+      <button className='home-button' onClick={props.floppity}>Go Back Home</button>
       <h2 className='title'> {props.picked.title} </h2>
       <img className='movie-card' src={props.picked.backdrop_path
       } alt='A poster of a movie'></img>

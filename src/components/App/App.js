@@ -8,36 +8,35 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-useEffect(() => {
-  fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  .then(response => response.json())
-  .then(data => setMovies(data.movies))
-  .catch(error => console.log(error))
-})
+  useEffect(() => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies?sort=title&order=desc')
+      .then(response => response.json())
+      .then(data => setMovies(data.movies))
+      .catch(error => console.log(error))
+  })
+  const [movies, setMovies] = useState([]);
+  const [movieView, setMovieView] = useState(false);
+  const [moviesView, setMoviesView] = useState(true);
+  const [picked, setPicked] = useState();
 
-const [movies, setMovies] = useState([]);
-const [movieView, setMovieView] = useState(false);
-const [moviesView, setMoviesView] = useState(true);
-const [picked, setPicked] = useState();
+  let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
 
-let filtered = movies.sort((a,b)=> a.title.localeCompare(b.title)).map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie}/>)
-
-function findMovie(anID) {
+  function findMovie(anID) {
     let singular = movies.find(x => Number(x.id) === anID)
-        setMoviesView(false)
+    setMoviesView(false)
     setMovieView(true)
     setPicked(singular)
   }
   function floppity() {
     setMovieView(false)
-    setMoviesView(true)  
+    setMoviesView(true)
   }
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <main className='movie-list'>
-      {movieView && <InduvidualMovie floppity={floppity} picked={picked}/>}
-      {moviesView && filtered}
+        {movieView && <InduvidualMovie floppity={floppity} picked={picked} />}
+        {moviesView && filtered}
       </main>
     </div>
   );
@@ -46,7 +45,7 @@ function findMovie(anID) {
 
 // function App() {
 //   let filtered = movieData.movies.map(movie => <MovieCard poster={movie.poster_path} id={movie.id} key={movie.id}/>)
-  
+
 //     return (
 //       <div className="App">
 //         <Header />
