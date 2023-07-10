@@ -1,12 +1,16 @@
 
 .header-container {
+  border-bottom:1px solid rgb(205, 26, 26);
   display: flex;
-  justify-content: center;
+  background-color:black;
+  padding:10px;
+  justify-content: flex-start;
+  margin-left: 10px;
   align-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 30px;
   font-family: 'Limelight', cursive;
-  color:aliceblue;
+  color:rgb(205, 26, 26);
 }
 
 img {
