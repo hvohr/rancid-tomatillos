@@ -1,10 +1,17 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+beforeEach(() => {
+  cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+    statusCode: 200,
+    fixture: "moviesmock.json"
   })
-})
+  .visit("http://localhost:3000/")
+});
+
 describe('Movies home should be tested', () => {
-  it('Movies home tests', () => {
-    expect(true).to.equal(true)
-  })
+  it("should have a proper header", () => {
+    cy.get("h1").contains("Rancid Tomatillos")
+  
+  });
+  
 })
+
+
