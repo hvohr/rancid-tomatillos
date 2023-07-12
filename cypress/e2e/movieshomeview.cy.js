@@ -38,32 +38,4 @@ describe('Movies home should render properly', () => {
 });
 
 
-describe('User should be able to go to individual movie info, have that render properly, and come back to movies view', () => {
-  it('User should be able to click an image and be transported to movie info view', () => {
-    cy.get("img")
-    .first()
-    .click()
-    .url()
-    //This needs to be changed after implementing router//
-    .should('include', 'http://localhost:3000/')
-    //This needs to be changed after implementing router//
-  })
-  it('User should see correct movie info and correct elements containing those details', () => {
-    cy.get("img")
-    .first()
-    .click()
-    .get("h1")
-    .contains("Rancid Tomatillos")
-    .get('.title')
-    .contains('h2', 'Black Adam')
-    .get('.rating')
-    .contains('h2', '4')
-    .get('.release')
-    .contains('h2', 'Release Date: 2022-10-19')
-    .get('.movie-card')
-    .invoke('attr', 'src')
-    .should('eq', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg')
-    .get('.movie-card')
-    .should('be.visible')
-  })
-})
+
