@@ -6,7 +6,7 @@ beforeEach(() => {
   .visit("http://localhost:3000/")
 });
 
-describe('Movies home should be tested', () => {
+describe('Movies home should render properly', () => {
   it("should have a proper header", () => {
     cy.get("h1").contains("Rancid Tomatillos")
   
@@ -22,19 +22,31 @@ describe('Movies home should be tested', () => {
     .last()
     .invoke('attr', 'src')
     .should('eq', 'https://image.tmdb.org/t/p/original//woTQx9Q4b8aO13jR9dsj8C9JESy.jpg')
-    cy.get("img")
+    .get("img")
     .first()
     .invoke('attr', 'src')
     .should('eq', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
   });
-  it("the img element should be visible for individual movies", () => {
+  it("the img element should be visible for particular movies", () => {
     cy.get("img")
     .last()
     .should('be.visible')
-    cy.get("img")
+    .get("img")
     .first()
     .should('be.visible')
   });
 });
 
 
+describe('User should be able to go to individual movie info, have that render properly, and come back to movies view', () => {
+  it('User should be able to click an image and be transported to movie info view', () => {
+    cy.get("img")
+    .first()
+    .click()
+    .url()
+    //This needs to be changed after implementing router//
+    .should('include', 'http://localhost:3000/')
+    //This needs to be changed after implementing router//
+  })
+
+})
