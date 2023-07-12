@@ -8,7 +8,6 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../../pages/Home'
 
 function App() {
-
   async function fetchData() {
     try {
       let response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
@@ -31,34 +30,24 @@ function App() {
   }
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('')
-  const [movieView, setMovieView] = useState(false);
-  const [moviesView, setMoviesView] = useState(true);
-  const [picked, setPicked] = useState();
+  const [picked, setPicked] = useState('');
 
   let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
 
   function findMovie(anID) {
     let singular = movies.find(x => Number(x.id) === anID)
-    setMoviesView(false)
-    setMovieView(true)
     setPicked(singular)
   }
-  function goHomeHelper() {
-    setMovieView(false)
-    setMoviesView(true)
-  }
-  function singleMovie() {
-    return (
-      <InduvidualMovie goHomeHelper={goHomeHelper} movieImage={picked.backdrop_path} pickedTitle={picked.title} pickedRating={picked.average_rating} pickedDate={picked.release_date}/>
-    )
-  }
+  useEffect(() => {
+    setPicked(picked)
+  })
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path='/' element={<Home moviesView= {moviesView} filtered ={filtered}/>} />
-        <Route path='/home' element={<Home moviesView= {moviesView} filtered ={filtered}/>} />
-        <Route path= '/:id' element={singleMovie} />
+        <Route path='/' element={<Home filtered ={filtered}/>} />
+        <Route path='/home' element={<Home filtered ={filtered}/>} />
+        <Route path= '/:id' element={<InduvidualMovie movieImage={picked.backdrop_path} pickedTitle={picked.title} pickedRating={picked.average_rating} pickedDate={picked.release_date}/>} />
       </Routes>
     </div>
   );

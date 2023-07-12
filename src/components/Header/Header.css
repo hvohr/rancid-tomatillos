@@ -1,20 +1,45 @@
-
 .header-container {
-  border-bottom:1px solid rgb(205, 26, 26);
+  border-bottom: 1px solid rgb(171, 29, 57);
   display: flex;
-  background-color:black;
-  padding:10px;
+  background-color: black;
+  padding: 10px;
   justify-content: space-between;
-  margin-left: 10px;
   align-content: center;
   align-items: center;
   font-size: 30px;
   font-family: 'Limelight', cursive;
-  color:rgb(205, 26, 26);
+  color: rgb(171, 29, 57);
+  ;
 }
 
+.website-title {
+  color: rgb(171, 29, 57);
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2.5em;
+}
 
-img {
+.nav-home-button {
+  color: rgb(171, 29, 57);
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  font-size: 35px;
+}
+
+.title-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.front-movie-card {
   height: inherit;
   width: 200px;
+}
+
+.title-logo {
+  height: 90px;
+  width: 90px;
 }
