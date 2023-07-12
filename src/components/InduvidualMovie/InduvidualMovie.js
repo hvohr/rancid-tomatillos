@@ -6,7 +6,6 @@ function InduvidualMovie(props) {
   let alternate = `A poster of the movie ${props.pickedTitle}`
   return (
     <div className='induvidual-container'>
-      <button className='home-button' onClick={props.goHomeHelper}>Go Back Home</button>
       <h2 className='title'> {props.pickedTitle} </h2>
       <img className='movie-card' src={props.movieImage
       } alt={alternate}></img>
