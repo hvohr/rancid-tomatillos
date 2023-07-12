@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './InduvidualMovie.css'
 
 function InduvidualMovie(props) {
@@ -16,3 +17,10 @@ function InduvidualMovie(props) {
 }
 
 export default InduvidualMovie
+
+InduvidualMovie.propTypes = {
+  pickedRating: PropTypes.number.isRequired,
+  pickedTitle: PropTypes.string.isRequired,
+  pickedDate: PropTypes.string.isRequired,
+  goHomeHelper: PropTypes.func.isRequired,  
+}
