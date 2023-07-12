@@ -1,9 +1,10 @@
 import React from 'react'
 import './MovieCard.css'
 
-function MovieCard(props) {
+function MovieCard({title, poster, id, ...props}) {
+  let alternate = `A poster of the movie ${title}`
   return (
-    <img className='front-movie-card' src={props.poster} alt='A poster of the movie' id={props.id} onClick={() => props.findMovie(props.id)}></img>
+    <img className='front-movie-card' src={poster} alt={alternate} id={id} onClick={() => props.findMovie(id)}></img>
   )
 }
 

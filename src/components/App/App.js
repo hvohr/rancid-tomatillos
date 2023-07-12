@@ -42,7 +42,7 @@ function App() {
     setMovieView(true)
     setPicked(singular)
   }
-  function floppity() {
+  function goHomeHelper() {
     setMovieView(false)
     setMoviesView(true)
   }
@@ -50,7 +50,7 @@ function App() {
     <div className="App">
       <Header />
       <main className='movie-list'>
-        {movieView && <InduvidualMovie floppity={floppity} picked={picked} />}
+        {movieView && <InduvidualMovie goHomeHelper={goHomeHelper} movieImage={picked.backdrop_path} pickedTitle={picked.title} pickedRating={picked.average_rating} pickedDate={picked.release_date} />}
         {moviesView && filtered}
       </main>
     </div>
