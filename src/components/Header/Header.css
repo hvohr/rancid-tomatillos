@@ -2,21 +2,20 @@
   border-bottom: 1px solid rgb(171, 29, 57);
   display: flex;
   background-color: black;
-  padding: 10px;
+  padding: 8px;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Limelight', cursive;
   color: rgb(171, 29, 57);
-  ;
 }
 
 .website-title {
   color: rgb(171, 29, 57);
   text-decoration: none;
-  padding: 10px;
-  margin: 10px;
+  padding: 8px;
+  margin: 8px;
   font-size: 2.5em;
 }
 
@@ -25,7 +24,7 @@
   text-decoration: none;
   padding: 10px;
   margin: 10px;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .title-container {
@@ -40,6 +39,6 @@
 }
 
 .title-logo {
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
 }

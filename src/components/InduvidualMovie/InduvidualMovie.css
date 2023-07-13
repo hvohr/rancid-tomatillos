@@ -3,36 +3,24 @@
 }
 
 .induvidual-movie-container {
-  background-color: #282c34;
-  min-height: 100vh;
-  min-width: 100vh;
+  background-color: #cfe3ec;
+  min-height: 90vh;
+  min-width: 90vh;
   display: flex;
   align-content: center;
   position: absolute;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: rgb(0, 0, 0);
   padding-top: 10px;
 }
 
-.title-picture-container {
-  flex: display;
+.induvidual-title-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.home-button {
-  border-radius: 10em;
-  margin: 10px;
-  height: 10vh;
-  width: 20vw;
-  font-size: 25px;
-  background-color: white;
-  color: #282c34;
-  transition: all .2s ease-in-out;
-}
-
-h2 {
-  color: aliceblue;
 }
 
 .movie-card {
@@ -41,11 +29,43 @@ h2 {
   height: 32%;
 }
 
+.movie-details-container {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  /* flex-direction: column; */
+  align-content: center;
+}
+
+.rating,
+.runtime,
+.release,
+.genre {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.tagline {
+  font-size: 25px;
+  padding: 5px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  margin: 5px;
+}
+
+.overview {
+  width: 80%;
+  font-size: 25px;
+}
+
 .induvidual-title {
   margin: 10px;
-  font-size: 2.5em;
+  font-size: 50px;
+  margin-bottom: 0px;
   text-align: center;
+  font-style: oblique;
 }
+
 
 .info {
   margin: 10px;
@@ -55,4 +75,3 @@ h2 {
 button:hover {
   transform: scale(1.1);
 }
-
