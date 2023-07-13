@@ -11,10 +11,9 @@ describe('User should be able to go to individual movie info, have that render p
     cy.get("img")
     .first()
     .click()
-    .url()
-    //This needs to be changed after implementing router//
-    .should('include', 'http://localhost:3000/')
-    //This needs to be changed after implementing router//
+    .url('/436270')
+    .should('include', 'http://localhost:3000')
+
   })
   it('User should see correct movie info and correct elements containing those details', () => {
     cy.get("img")
@@ -22,7 +21,8 @@ describe('User should be able to go to individual movie info, have that render p
     .click()
     .get("h1")
     .contains("Rancid Tomatillos")
-    .get('.title')
+    cy.get('.induvidual-title')
+    .first()
     .contains('h2', 'Black Adam')
     .get('.rating')
     .contains('h2', '4')
@@ -39,10 +39,10 @@ describe('User should be able to go to individual movie info, have that render p
     .first()
     .click()
     .url()
-    .get('.home-button')
+    .get('.nav-home-button')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/')    
+    .should('include', 'http://localhost:3000/home')    
   })
 });
 
