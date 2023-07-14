@@ -6,6 +6,7 @@ import Header from '../Header/Header'
 
 
 function InduvidualMovie(props) {
+  console.log(props)
   const { id } = useParams()
   let alternate = `A poster of the movie ${props.title}`
   return (
@@ -21,7 +22,8 @@ function InduvidualMovie(props) {
           <h2 className='rating'>Rating: {Math.round(props.rating * 10) / 10} / 10</h2>
           <h2 className='runtime'>Runtime: {props.runtime} minutes</h2>
           <h2 className='release'> Release Date: {props.date} </h2>
-          <h2 className='genre'> Genres: {props.genres}{' '}</h2>
+          <h2 className='genre'> Genres:{props.genres !== undefined && props.genres.map((genre) => {
+            return <h2 className='genre-list'>{genre}</h2>})}</h2>
         </div>
       </div>
     </section>

@@ -21,17 +21,23 @@ function App() {
 
   let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
 
+
   function findMovie(id) {
     fetchSingleData(id).then(
       data => setSingle(data.movie)
     ).catch(error => setError({error:true, response:error}))
   }
-
   useEffect(() => setError(error))
 
   useEffect(() => {
     setSingle(single)
   }, [])
+  
+  function filteredGenre() {
+    if (single.genres !== undefined) {
+      return <p></p>
+    }
+  }
   return (
     <div className="App">
       <Header />
@@ -40,7 +46,7 @@ function App() {
         <Route path='/home' element={<Home error={error} filtered={filtered} />} />
         <Route path='/home/:id' element={<InduvidualMovie error={error} image={single.backdrop_path} title={single.title}
           rating={single.average_rating} date={single.release_date} budget={single.budget} overview={single.overview}
-          runtime={single.runtime} tagline={single.tagline} revenue={single.revenue} genres={single.genres} />} />
+          runtime={single.runtime} tagline={single.tagline} revenue={single.revenue} genres={single.genres}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

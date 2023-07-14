@@ -10,7 +10,6 @@ async function fetchData() {
 async function fetchSingleData(id) {
     let response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     if (response.ok === false) {
-      console.log(response)
       throw new Error(response.statusText)
     }
     let data = await response.json();
