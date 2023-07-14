@@ -9,6 +9,7 @@ function InduvidualMovie(props) {
   const { id } = useParams()
   let alternate = `A poster of the movie ${props.title}`
   return (
+    
     <section className="induvidual-movie-container">
       <div className='induvidual-title-container'>
         <h2 className='induvidual-title'> {props.title} </h2>

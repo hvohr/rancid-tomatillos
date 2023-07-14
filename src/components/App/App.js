@@ -15,7 +15,7 @@ function App() {
     )
   })
   const [movies, setMovies] = useState([]);
-  const [single, setSingle] = useState([])
+  const [single, setSingle] = useState([]);
 
   let filtered = movies.map(movie => <MovieCard poster={movie.poster_path} title={movie.title} id={movie.id} key={movie.id} findMovie={findMovie} />)
 
