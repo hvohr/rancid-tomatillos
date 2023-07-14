@@ -9,8 +9,9 @@ function InduvidualMovie(props) {
   const { id } = useParams()
   let alternate = `A poster of the movie ${props.title}`
   return (
-    
     <section className="induvidual-movie-container">
+      {props.error.error && <div><img className='error-logo' alt='big red circle with x inside' src={require('../../components/images/cancel.png')}></img>
+        <p className='error-message'>{`We apologize! ${props.error.response}. Please try again later.`}</p></div>}
       <div className='induvidual-title-container'>
         <h2 className='induvidual-title'> {props.title} </h2>
         <h3 className='tagline'>{props.tagline}</h3>

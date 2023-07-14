@@ -38,10 +38,10 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home filtered={filtered} error={error} />} />
         <Route path='/home' element={<Home error={error} filtered={filtered} />} />
-        <Route path='/:id' element={<InduvidualMovie image={single.backdrop_path} title={single.title}
+        <Route path='/home/:id' element={<InduvidualMovie error={error} image={single.backdrop_path} title={single.title}
           rating={single.average_rating} date={single.release_date} budget={single.budget} overview={single.overview}
           runtime={single.runtime} tagline={single.tagline} revenue={single.revenue} genres={single.genres} />} />
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );

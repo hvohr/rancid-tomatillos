@@ -1,5 +1,5 @@
 async function fetchData() {
-    let response = await fetch('https://rancid-tomatillos.herokuap.com/api/v2/movies')
+    let response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     if (response.ok === false) {
       throw new Error(response.statusText)
     }

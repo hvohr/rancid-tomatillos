@@ -1,7 +1,9 @@
 import React from 'react'
 
 function ErrorPage() {
-    return <>You have landed on a page that doesn't exist</>;
+    return (
+      <p className='redirect-message'>You have landed on a page that doesn't exist</p>
+    )
 }
 
 export default ErrorPage

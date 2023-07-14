@@ -8,7 +8,7 @@ function MovieCard({title, poster, id, findMovie}) {
   let alternate = `A poster of the movie ${title}`
   let elTitle = `${title}`
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/home/${id}`}>
     <img className='front-movie-card' title={elTitle} tabIndex='0' src={poster} alt={alternate} id={id} onClick={() => findMovie(id)}></img>
     </Link>
   )

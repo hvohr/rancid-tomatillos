@@ -25,4 +25,12 @@
   margin: 50px;
 }
 
+.redirect-message {
+    color: rgb(171, 29, 57);
+    font-style:italic;
+    font-size: 50px;
+    height: 90vh;
+    width: 100vw;
+}
+
 
