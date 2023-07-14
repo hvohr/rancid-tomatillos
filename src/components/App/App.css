@@ -11,4 +11,18 @@
   margin-top: 10px;
 }
 
+.error-message {
+  color: rgb(171, 29, 57);
+  font-style:italic;
+  font-size: 50px;
+  height: 50vh;
+  width: 100vw;
+}
+
+.error-logo {
+  height: 250px;
+  width: 250px;
+  margin: 50px;
+}
+
 
