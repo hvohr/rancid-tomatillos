@@ -15,6 +15,11 @@
   padding-top: 10px;
 }
 
+.genre-list {
+  font-size: 1.0em;
+  margin: 6px;
+}
+
 .induvidual-title-container {
   display: flex;
   flex-direction: column;
@@ -33,7 +38,6 @@
   text-align: center;
   align-items: center;
   display: flex;
-  /* flex-direction: column; */
   align-content: center;
 }
 
@@ -44,6 +48,11 @@
   margin: 10px;
   border: 1px solid black;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 29px;
+
 }
 
 .tagline {
@@ -64,12 +73,6 @@
   margin-bottom: 0px;
   text-align: center;
   font-style: oblique;
-}
-
-
-.info {
-  margin: 10px;
-  font-size: 1.2em;
 }
 
 button:hover {
