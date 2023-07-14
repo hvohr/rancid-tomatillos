@@ -8,20 +8,21 @@ beforeEach(() => {
 
 describe('Movies home should render properly', () => {
   it("should have a proper header", () => {
-    cy.get("h1").contains("Rancid Tomatillos")
+    cy.get("h1")
+    .contains("Rancid Tomatillos")
   
   });
   it("should have a collection of movies", () => {
     cy
-    .get('img')
-    .should("have.length", 13);
+    .get('.front-movie-card')
+    .should("have.length", 12);
   });
   it("the img element should be visible for particular movies", () => {
-    cy.get("img")
-    .last()
+    cy.get('img[title="Black Adam"]')
     .should('be.visible')
-    .get("img")
-    .first()
+    .get('img[title="X"]')
+    .should('be.visible')
+    .get('.title-logo')
     .should('be.visible')
   });
 });
