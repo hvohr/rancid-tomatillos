@@ -1,7 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './MovieCard.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './MovieCard.css';
+import { Link } from 'react-router-dom';
+import urlPropType from 'url-prop-type';
 
 
 function MovieCard({title, poster, id, findMovie}) {
@@ -20,4 +21,5 @@ MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   findMovie: PropTypes.func.isRequired,
+  poster: urlPropType.isRequired,
 }

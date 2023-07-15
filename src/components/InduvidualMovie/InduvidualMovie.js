@@ -1,14 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './InduvidualMovie.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './InduvidualMovie.css';
 import { useParams } from "react-router-dom";
-import Header from '../Header/Header'
+import Header from '../Header/Header';
+import urlPropType from 'url-prop-type';
 
 
 function InduvidualMovie(props) {
-  console.log(props)
   const { id } = useParams()
   let alternate = `A poster of the movie ${props.title}`
+  callType()
   return (
     <section className="induvidual-movie-container">
       {props.error.error && <div><img className='error-logo' alt='big red circle with x inside' src={require('../../components/images/cancel.png')}></img>
@@ -32,8 +33,17 @@ function InduvidualMovie(props) {
 
 export default InduvidualMovie
 
+const callType = () => {
+
 InduvidualMovie.propTypes = {
-  pickedRating: PropTypes.number.isRequired,
-  pickedTitle: PropTypes.string.isRequired,
-  pickedDate: PropTypes.string.isRequired,
+  error: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  runtime: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
+  genres: PropTypes.array.isRequired,
+  image: urlPropType.isRequired,
+}
 }
