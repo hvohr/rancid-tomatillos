@@ -55,8 +55,9 @@
     font-size: 5vw;
   }
   .title-logo {
-    height: 8vw;
-    width: 8vw;
+    height: 7vw;
+    margin-top: 3vw;
+    width: 7vw;
   }
 }
 @media screen and (max-width: 1000px) {
