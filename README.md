@@ -9,7 +9,7 @@ In order to clone this application:
 - Start by cloning down the [frontend server repository](https://github.com/hvohr/rancid-tomatillos).
 - cd (change directory) into that project and run npm install
 - run npm start and the website will appear in your preferred browsing site.
-- You also have the option to click the [deploy link]() for casual viewing
+- You also have the option to click the [deploy link](https://rancid-tomatillos-9x4j.vercel.app/) for casual viewing
 
 ### Preview of App:
 ![App Preview](https://user-images.githubusercontent.com/123392693/253824358-d8f89e18-5d79-4e86-a20e-0f6611c5c44f.jpeg)
