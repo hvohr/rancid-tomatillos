@@ -20,7 +20,7 @@ describe('User should be able to go to individual movie info, have that render p
     cy.get('img[title="Black Adam"]')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/436270')
+    .should('include', 'http://localhost:3000/home/436270')
 
   })
   it('User should see correct movie info and correct elements containing those details', () => {
@@ -52,7 +52,7 @@ describe('User should be able to go to individual movie info, have that render p
     cy.get('img[title="Black Adam"]')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/436270')
+    .should('include', 'http://localhost:3000/home/436270')
     .get('.nav-home-button')
     .click()
     .url()
@@ -60,7 +60,7 @@ describe('User should be able to go to individual movie info, have that render p
     .get('img[title="X"]')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/760104')
+    .should('include', 'http://localhost:3000/home/760104')
     .get('.nav-home-button')
     .click()
     .url()
