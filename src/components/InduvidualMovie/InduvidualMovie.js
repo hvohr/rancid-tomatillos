@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './InduvidualMovie.css';
 import { useParams } from "react-router-dom";
-import Header from '../Header/Header';
 import urlPropType from 'url-prop-type';
-
+import { useEffect } from 'react'
 
 function InduvidualMovie(props) {
+  useEffect(() => {
+    window.onbeforeunload = function() {
+      return props.reload()
+    }
+  })
   const { id } = useParams()
   let alternate = `A poster of the movie ${props.title}`
   callType()
@@ -24,7 +28,8 @@ function InduvidualMovie(props) {
           <h2 className='runtime'>Runtime: {props.runtime} minutes</h2>
           <h2 className='release'> Release Date: {props.date} </h2>
           <div className='genre'> Genres:{props.genres !== undefined && props.genres.map((genre) => {
-            return <h2 key={Date.now() + props.genres.indexOf(genre)} style={{textDecoration:'underline'}} className='genre-list'>{genre}</h2>})}</div>
+            return <h2 key={Date.now() + props.genres.indexOf(genre)} style={{ textDecoration: 'underline' }} className='genre-list'>{genre}</h2>
+          })}</div>
         </div>
       </div>
     </section>
@@ -34,16 +39,15 @@ function InduvidualMovie(props) {
 export default InduvidualMovie
 
 const callType = () => {
-
-InduvidualMovie.propTypes = {
-  error: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
-  tagline: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  runtime: PropTypes.number.isRequired,
-  date: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired,
-  image: urlPropType.isRequired,
-}
+  InduvidualMovie.propTypes = {
+    error: PropTypes.object,
+    title: PropTypes.string,
+    tagline: PropTypes.string,
+    overview: PropTypes.string,
+    rating: PropTypes.number,
+    runtime: PropTypes.number,
+    date: PropTypes.string,
+    genres: PropTypes.array,
+    image: urlPropType
+  }
 }
