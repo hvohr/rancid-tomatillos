@@ -24,7 +24,7 @@ function InduvidualMovie(props) {
           <h2 className='runtime'>Runtime: {props.runtime} minutes</h2>
           <h2 className='release'> Release Date: {props.date} </h2>
           <div className='genre'> Genres:{props.genres !== undefined && props.genres.map((genre) => {
-            return <h2 className='genre-list'>{genre}</h2>})}</div>
+            return <h2 key={Date.now() + props.genres.indexOf(genre)} style={{textDecoration:'underline'}} className='genre-list'>{genre}</h2>})}</div>
         </div>
       </div>
     </section>
