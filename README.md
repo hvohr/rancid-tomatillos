@@ -18,8 +18,8 @@ In order to clone this application:
 We are currently in Mod 3 of the Turing Frontend Development Program. A total of 20 hours were spent on this project.
 
 ### Developers:
-- Hollis Vohr - [Github](https://github.com/hvohr)
-- Victor Sriqui - [Github](https://github.com/vsriqui)
+- Hollis Vohr - [Github](https://github.com/hvohr) - [LinkedIn](https://www.linkedin.com/in/hollisvohr/)
+- Victor Sriqui - [Github](https://github.com/vsriqui) - [LinkedIn](www.linkedin.com/in/victor-sriqui/)
 
 ### Learning Goals:
 - Utilize foundational React concepts
