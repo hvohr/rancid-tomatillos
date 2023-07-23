@@ -3,28 +3,35 @@ beforeEach(() => {
     statusCode: 200,
     fixture: "moviesmock.json"
   })
+  .as('home')
   .visit("http://localhost:3000/")
+  
   cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
     statusCode: 200,
     fixture: "ba.json"
   })
+  .as('ba')
+
   cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/760104', {
     statusCode: 200,
     fixture: "x.json"
   })
+  .as('x')
 });
 
 describe('User should be able to go to individual movie info, have that render properly, and come back to movies view', () => {
   it('User should be able to click an image and be transported to movie info view', () => {
-    // fetchSingle()
-    cy.get('img[title="Black Adam"]')
+    cy.wait('@home')
+    .get('img[title="Black Adam"]')
     .click()
+    cy.wait('@ba')
     .url()
     .should('include', 'http://localhost:3000/home/436270')
 
   })
   it('User should see correct movie info and correct elements containing those details', () => {
-    cy.get('img[title="Black Adam"]')
+    cy.wait('@home')
+    .get('img[title="Black Adam"]')
     .click()
     .get("h1")
     .contains("Rancid Tomatillos")
@@ -49,22 +56,25 @@ describe('User should be able to go to individual movie info, have that render p
     .should('be.visible')
   })
   it('User should be able to click the button and go back to home-movies view', () => {
-    cy.get('img[title="Black Adam"]')
+    cy.wait('@home')
+    .get('img[title="Black Adam"]')
     .click()
+    cy.wait('@ba')
     .url()
-    .should('include', 'http://localhost:3000/home/436270')
+    .should('include', '436270')
     .get('.nav-home-button')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/home')
+    .should('include', 'home')
     .get('img[title="X"]')
     .click()
+    cy.wait('@x')
     .url()
-    .should('include', 'http://localhost:3000/home/760104')
+    .should('include', '760104')
     .get('.nav-home-button')
     .click()
     .url()
-    .should('include', 'http://localhost:3000/home')   
+    .should('include', 'home')   
   })
 });
 
