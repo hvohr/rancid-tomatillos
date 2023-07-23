@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract: 
+Welcome to Rancid Tomatillos! Want to find a fun movie and don't know where to peruse? Well, our application is the one for you! On the front page, you will immediately see a list of movies, which are available to click on for more data information. We have information regarding its run time, rating, genre specificity, and more! If you change your mind about one of them, you have the option to go home by clicking the 'Home' Button in the dashboard. We hope we helped in your movie-hunting endevours!
 
-## Available Scripts
+## Installation Instructions
+In order to clone this application:
 
-In the project directory, you can run:
+- Start by cloning down the [frontend server repository](https://github.com/hvohr/rancid-tomatillos).
+- cd (change directory) into that project and run npm install
+- run npm start and the website will appear in your preferred browsing site.
+- You also have the option to click the [deploy link](https://rancid-tomatillos-9x4j.vercel.app/) for casual viewing
 
-### `npm start`
+### Preview of App:
+![App Preview](https://user-images.githubusercontent.com/123392693/253824358-d8f89e18-5d79-4e86-a20e-0f6611c5c44f.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Context:
+We are currently in Mod 3 of the Turing Frontend Development Program. A total of 20 hours were spent on this project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Developers:
+- Hollis Vohr - [Github](https://github.com/hvohr) - [LinkedIn](https://www.linkedin.com/in/hollisvohr/)
+- Victor Sriqui - [Github](https://github.com/vsriqui) - [LinkedIn](www.linkedin.com/in/victor-sriqui/)
 
-### `npm test`
+### Learning Goals:
+- Utilize foundational React concepts
+- Implement Cypress E2E Testing
+- Implement React Router
+- Write DRY, reusable code that follows SRP and trends toward function purity
+- Make network requests to retrieve data from the server and post data from the server. 
+- Maintain proper git workflow and practices.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack
+- JavaScript, CSS, HTML, Cypress, Webpack, React, React Router, FETCH API's
 
-### `npm run build`
+#### Dependencies
+npm i is-url
+npm i --save url-prop-type
+npm i router-react-dom
+npm i cypress
+npm i proptypes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
